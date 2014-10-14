@@ -5,3 +5,32 @@ div.bar {
     background-color: teal;
     margin-right: 2px;
 }
+
+div {
+	border: 2px solid black;
+}
+
+#layout {
+	width: 1080px;
+	height: 600px;
+}
+
+#title {
+	text-align: center;
+	height: 80px;
+}
+
+#visualization {
+	width: 800px;
+	height:400px;
+}
+
+#filters {
+	width: 280px;
+	height:520px;
+}
+
+#infobar {
+	width: 800px;
+	height:200px;
+}
