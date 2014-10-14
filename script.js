@@ -43,6 +43,7 @@ function winRate(a){
 	var wins = winLoss(a)[0];
 	var losses = winLoss(a)[1];
 	var xVals = unique(wins.concat(losses));
+	console.log(xVals);
 	xVals.sort(sortNumber);
 	var rates = [];
 	for (i = 0; i<xVals.length; i++){
@@ -55,16 +56,19 @@ function winRate(a){
 			}
 		}
 		for (y = 0; y<losses.length; y++){
-			if (losses[x] == val){
-				l++
+			if (losses[y] == val){
+				l++;
 			}
 		}
-		if (l == 0){
-			return w;
-		} else{
-			return w/l;
+		if (w == 0){
+			rates.push([val,0]);
+		} else if (l == 0){
+			rates.push([val, 1]);
+		} else {
+			rates.push([val,w/(w+l)]);
 		}
 	}
+	return rates;
 }
 
 // Visualization 
