@@ -5,15 +5,16 @@ var dataset;
 
 d3.csv("flarlarlar.csv", function(error, data){
 	if (error){
-		console.log('error');
+		console.log('Error uploading data');
 	} else {
-		console.log('yay');
+		console.log('Data uploaded successfully!');
 	}
 	dataset = data;
 	begin()
 });
 
 // Backend functions
+// Returns a unique set of values
 function unique(a) {
     return a.reduce(function(p, c) {
         if (p.indexOf(c) < 0) p.push(c);
@@ -25,6 +26,8 @@ function sortNumber(a, b){
 	return a-b;
 }
 
+// For each match in the dataset, return the attribute you're looking for and whether or not you won.
+// Returns two arrays, Wins and Losses
 function winLoss(a){
 	var reduced = dataset.map(function(x){
 		return [x[a], x['winner']];
