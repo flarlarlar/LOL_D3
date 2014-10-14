@@ -1,0 +1,44 @@
+* {
+	font
+}
+
+div.bar {
+    display: inline-block;
+    width: 20px;
+    height: 75px;   /* We'll override this later */
+    background-color: teal;
+    margin-right: 2px;
+}
+
+div {
+	border: 1px solid black;
+}
+
+#layout {
+	width: 1080px;
+	height: 680;
+}
+
+#title {
+	text-align: center;
+	height: 50px;
+}
+
+#visualization {
+	width: 800px;
+	height:450px;
+	float: left;
+	border-top: 0;
+}
+
+#filters {
+	width: 276px;
+	height:600px;
+	float: right;
+}
+
+#infobar {
+	width: 800px;
+	height:150px;
+	float: left;
+}
