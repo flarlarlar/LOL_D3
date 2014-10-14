@@ -36,11 +36,35 @@ function winLoss(a){
 	var losses = reduced.filter(function(x){return x[1] == "False"}).map(function(x){return +x[0]});
 	wins.sort(sortNumber);
 	losses.sort(sortNumber);
-	return wins, losses;
+	return [wins, losses];
 }
 
 function winRate(a){
-
+	var wins = winLoss(a)[0];
+	var losses = winLoss(a)[1];
+	var xVals = unique(concat(wins, losses));
+	xVals.sort(sortNumber);
+	var rates = [];
+	for (i = 0; i<xVals.length; i++){
+		val = xVals[i]
+		w = 0;
+		l = 0;
+		for (x = 0; x<wins.length; x++){
+			if (wins[x] == val){
+				w++;
+			}
+		}
+		for (y = 0; y<losses.length; y++){
+			if (losses[x] == val){
+				l++
+			}
+		}
+		if (l == 0){
+			return w;
+		} else{
+			return w/l;
+		}
+	}
 }
 
 // Visualization 
