@@ -42,7 +42,7 @@ function winLoss(a){
 function winRate(a){
 	var wins = winLoss(a)[0];
 	var losses = winLoss(a)[1];
-	var xVals = unique(concat(wins, losses));
+	var xVals = unique(wins.concat(losses));
 	xVals.sort(sortNumber);
 	var rates = [];
 	for (i = 0; i<xVals.length; i++){
